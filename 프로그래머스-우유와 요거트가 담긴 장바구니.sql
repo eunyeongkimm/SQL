@@ -1,3 +1,5 @@
+-- 우유와 요거트가 동시에 담긴 장바구니 구하기
+
 SELECT CART_ID
 FROM CART_PRODUCTS
 WHERE NAME = 'Milk'
