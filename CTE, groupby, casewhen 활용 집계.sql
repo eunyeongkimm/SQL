@@ -3,10 +3,11 @@ WITH SectInfo AS (
     gs.skey as skey,
     SUM(CASE WHEN appt_sect = 'S' THEN 1 ELSE 0 END) AS S_Count,
     SUM(CASE WHEN appt_sect = 'P' THEN 1 ELSE 0 END) AS P_Count,
-    (COUNT(*) - COUNT(appt_sect)) AS Null_Count  --((ÀüÃ¼ Çà ¼ö) - (APPT_SECTÃ¤¿öÁø Çà ¼ö) == (NULLÀÎ Çà ¼ö))
+    (COUNT(*) - COUNT(appt_sect)) AS Null_Count  --((ì „ì²´ í–‰ ìˆ˜) - (APPT_SECTì±„ì›Œì§„ í–‰ ìˆ˜) == (NULLì¸ í–‰ ìˆ˜))
   FROM [USdb].[sch_Basic].[B_appt] appt
    INNER JOIN [USdb].[sch_Addition].[A_key_grp] gs
-   ON appt.gkey = gs.gkey  GROUP BY gs.skey
+   ON appt.gkey = gs.gkey  
+  GROUP BY gs.skey
 )
 
 SELECT
