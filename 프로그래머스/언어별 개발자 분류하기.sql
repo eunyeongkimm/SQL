@@ -1,3 +1,5 @@
+-- 해결 과정 : https://data-nyang.tistory.com/27
+
 SELECT GRADE, ID, EMAIL
 FROM(
 SELECT 
