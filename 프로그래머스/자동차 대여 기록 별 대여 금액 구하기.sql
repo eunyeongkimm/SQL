@@ -1,4 +1,5 @@
 -- 관리 효율성을 위해 7일/30일/90일을 변수로 두고 join
+-- ->group by 후 max로 집계하여 최대값 가져오도록
 
 WITH TRUCK_RENT AS (
     SELECT *, REGEXP_REPLACE(duration_type, '[^0-9]+', '') AS t_numbers
